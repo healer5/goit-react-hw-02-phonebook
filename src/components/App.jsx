@@ -49,8 +49,9 @@ state = {
   
   render() {
 
-    const visibleContacts = this.state.contacts.filter(abonent =>
-      abonent.name.toLowerCase().includes(this.state.filter)
+    const normalizedFilter = this.state.filter.toLowerCase();
+    const visibleContacts = this.state.contacts.filter((contact) =>
+      contact.name.toLowerCase().includes(normalizedFilter)
     );
 
     return (      
